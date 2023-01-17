@@ -1,7 +1,7 @@
-import { ICarData } from '../interfaces';
+import { ICarDataGet } from '../interfaces';
 import { path } from '../paths';
 
-export async function updateCar(id: number, body: ICarData) {
+export async function updateCar(id: number, body: ICarDataGet) {
   const response = await fetch(`${path.garage}/${id}`, {
     method: 'PUT',
     body: JSON.stringify(body),
