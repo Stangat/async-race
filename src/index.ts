@@ -1,4 +1,12 @@
 import './style.scss';
-import { createHtml } from './pages/garage/view';
+import { renderGarage } from './pages/garage/garageView';
+import { setLocalStorage, getLocalStorage } from './store/store';
+import { renderResultMessage } from './components/resultMessage/resultMessage';
+import { renderWinners } from './pages/winners/winnersView';
+import { renderPagination } from './components/pagination/pagination';
 
-createHtml();
+setLocalStorage();
+renderGarage();
+renderResultMessage();
+renderWinners();
+renderPagination();
