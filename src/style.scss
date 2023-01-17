@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+}
+
+body {
+  background-color: rgb(0, 0, 18);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
+
+.garage {
+  padding: 0;
+  list-style: none;
+  li {
+    margin-bottom: 30px;
+  }
+}
+
+.car {
+  width: 110px;
+  height: 48px;
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.car-name {
+  margin-left: 15px;
+  color: orange;
+}
+
+.starting-point {
+  display: flex;
+}
+
+.lane {
+  display: flex;
+  border-bottom: 3px solid white;
+  justify-content: space-between;
+  // align-items: baseline;
+}
+
+.finish-flag {
+  margin-right: 60px;
+  display: flex;
+  align-items: flex-end;
+  font-size: 25px;
+}
+
+.control-section {
+  width: 300px;
+  margin-bottom: 50px;
+}
+
+.form {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.race-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  margin-top: 10px;
+  .race-controls__start-button,
+  .race-controls__reset-button {
+    background-color: orange;
+  }
+}
+
+.input-text {
+  padding: 4px;
+  border: none;
+  border-radius: 5px;
+}
+
+.race-controls__generate-button {
+  flex: 2;
+}
+
+.menu {
+  padding-bottom: 20px;
+}
+
+.main-header {
+  margin: 0;
+  color: white;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.secondary-header {
+  margin: 10px 0;
+  color: white;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.button {
+  width: 70px;
+  padding: 4px;
+  background-color: rgb(186, 182, 182);
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu__button {
+  width: 100px;
+  padding: 4px;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.engine-control {
+  margin-top: 12px;
+}
+
+.engine-button {
+  background: none;
+  color: white;
+  border: 2px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  &:disabled {
+    color:rgb(85, 85, 85);
+    cursor: auto;
+  }
+}
+.pagination-button {
+  width: 70px;
+  padding: 4px;
+  background-color: orange;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  &:disabled {
+    background:rgb(85, 85, 85);
+    cursor: auto;
+  }
+}
