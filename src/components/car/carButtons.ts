@@ -1,5 +1,3 @@
-import { ICarDataGet } from '../../api/interfaces';
-
 export function createCarViewButtons(name: string, id: number) {
   return `
     <div class="car-buttons-container">

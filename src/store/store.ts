@@ -1,5 +1,4 @@
 import { getCars } from '../api/cars/getCars';
-import { ICarsInGarageData } from '../api/interfaces';
 
 export async function setLocalStorage() {
   const res = await getCars(1);

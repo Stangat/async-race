@@ -1,6 +1,6 @@
-import { getLocalStorage } from "../../store/store";
-import { createCarItem } from "../../components/car/carItem";
-import { ICarDataGet } from "../../api/interfaces";
+import { getLocalStorage } from '../../store/store';
+import { createCarItem } from '../../components/car/carItem';
+import { ICarDataGet } from '../../api/interfaces';
 
 function createGarageControlBlock() {
   const garageControlBlockHtml = `
@@ -38,9 +38,13 @@ function createGarage() {
     <h1 class="main-header">Garage(${getLocalStorage('carsInGarage').count})</h1>
     <h2 class="secondary-header">Page#${getLocalStorage('carsPage')}</h2>
     <ul class="garage">
-      ${getLocalStorage('carsInGarage').items.map((item:ICarDataGet)=> `
+      ${getLocalStorage('carsInGarage')
+        .items.map(
+          (item: ICarDataGet) => `
         <li>${createCarItem(item.name, item.color, item.id)}</li>
-      `).join('')}
+      `
+        )
+        .join('')}
     </ul>
     `;
   const garageSection = document.createElement('section');

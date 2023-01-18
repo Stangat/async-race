@@ -13,6 +13,6 @@ export async function createWinner(body: IWinnerData) {
     const item = await response.json();
     return item;
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
 }

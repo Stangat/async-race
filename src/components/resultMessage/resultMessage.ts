@@ -8,4 +8,3 @@ export function renderResultMessage() {
     garageSection.append(resultMessageContainer);
   }
 }
-
