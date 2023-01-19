@@ -33,24 +33,38 @@ function createGarageControlBlock() {
   document.body.appendChild(garageControlBlock);
 }
 
-function createGarage() {
-  const garageHtml = `
-    <h1 class="main-header">Garage(${getLocalStorage('carsInGarage').count})</h1>
-    <h2 class="secondary-header">Page#${getLocalStorage('carsPage')}</h2>
-    <ul class="garage">
-      ${getLocalStorage('carsInGarage')
-        .items.map(
-          (item: ICarDataGet) => `
-        <li>${createCarItem(item.name, item.color, item.id)}</li>
-      `
-        )
-        .join('')}
-    </ul>
-    `;
+function renderCarsInGarage() {
+  return `
+  <h1 class="main-header">Garage(${getLocalStorage('carsInGarage').count})</h1>
+  <h2 class="secondary-header">Page#${getLocalStorage('carsPage')}</h2>
+  <ul class="garage">
+    ${getLocalStorage('carsInGarage')
+      .items.map(
+        (item: ICarDataGet) => `
+      <li>${createCarItem(item.name, item.color, item.id)}</li>
+    `
+      )
+      .join('')}
+  </ul>
+  `;
+}
+
+export function createGarage() {
+  const controlSection = document.querySelector('.control-section');
   const garageSection = document.createElement('section');
   garageSection.className = 'garage-section';
-  garageSection.innerHTML = garageHtml;
-  document.body.appendChild(garageSection);
+  garageSection.innerHTML = renderCarsInGarage();
+
+  if (controlSection) {
+    controlSection.after(garageSection);
+  }
+}
+
+export function removeGarage() {
+  const garageSection = document.querySelector('.garage-section');
+  if (garageSection) {
+    garageSection.remove();
+  }
 }
 
 export async function renderGarage() {
