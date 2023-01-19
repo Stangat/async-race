@@ -4,9 +4,17 @@ import { setLocalStorage } from './store/store';
 import { renderResultMessage } from './components/resultMessage/resultMessage';
 import { renderWinners } from './pages/winners/winnersView';
 import { renderPagination } from './components/pagination/pagination';
+import { updateGarageState } from './pages/garage/garageState';
+import { listen } from './pages/garage/listeners/totalListener';
 
-setLocalStorage();
-renderGarage();
-renderResultMessage();
-renderWinners();
-renderPagination();
+async function setUpApp() {
+  await setLocalStorage('1', 'garage');
+  renderGarage();
+  renderResultMessage();
+  renderWinners();
+  renderPagination();
+  updateGarageState();
+  listen();
+}
+
+setUpApp();
