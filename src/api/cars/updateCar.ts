@@ -1,7 +1,7 @@
-import { ICarDataGet } from '../interfaces';
+import { ICarDataCreate, ICarDataGet } from '../interfaces';
 import { path } from '../paths';
 
-export async function updateCar(id: number, body: ICarDataGet) {
+export async function updateCar(id: number, body: ICarDataCreate) {
   const response = await fetch(`${path.garage}/${id}`, {
     method: 'PUT',
     body: JSON.stringify(body),
@@ -9,6 +9,6 @@ export async function updateCar(id: number, body: ICarDataGet) {
       'Content-Type': 'application/json',
     },
   });
-  const item = await response.json();
+  const item: ICarDataGet = await response.json();
   return item;
 }

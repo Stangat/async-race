@@ -1,4 +1,4 @@
-import { ICarDataCreate } from '../interfaces';
+import { ICarDataCreate, ICarDataGet } from '../interfaces';
 import { path } from '../paths';
 
 export async function createCar(body: ICarDataCreate) {
@@ -9,6 +9,6 @@ export async function createCar(body: ICarDataCreate) {
       'Content-Type': 'application/json',
     },
   });
-  const item = await response.json();
+  const item: ICarDataGet = await response.json();
   return item;
 }
