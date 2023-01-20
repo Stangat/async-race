@@ -13,17 +13,17 @@ function createGarageControlBlock() {
         <form class="form form_create">
           <input class="input-text input-text__create" name="car-name" type="text">
           <input class="input-color input-color__create" name="car-color" type="color" value="#ffffff">
-          <button class="button form__submit-button">Create</button>
+          <button class="button form__submit-button_create">Create</button>
         </form>
         <form class="form form_update">
-          <input class="input-text input-text__update" name="car-name" type="text">
+          <input class="input-text input-text__update" name="car-name" type="text" disabled>
           <input class="input-color input-color__update" name="car-color" type="color" value="#ffffff" disabled>
-          <button class="button form__submit-button">Update</button>
+          <button class="button form__submit-button_update" disabled>Update</button>
         </form>
         <div class="race-controls">
           <button class="button race-controls__start-button">Race</button>
           <button class="button race-controls__reset-button">Reset</button>
-          <button class="button race-controls__generate-button">Generate cars</button>
+          <button class="button generate-button">Generate cars</button>
         </div>
       </div>
     </div>`;
