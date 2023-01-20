@@ -8,7 +8,7 @@ import { updateGarageState } from './pages/garage/garageState';
 import { listen } from './pages/garage/listeners/totalListener';
 
 async function setUpApp() {
-  await setLocalStorage('1', 'garage');
+  await setLocalStorage('garage');
   renderGarage();
   renderResultMessage();
   renderWinners();

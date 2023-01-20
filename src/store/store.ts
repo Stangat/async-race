@@ -9,14 +9,22 @@ export async function setCarsInGarageLocalStorage(page: string) {
   localStorage.setItem('carsInGarage', JSON.stringify(res));
 }
 
-export async function setViewLocalStorage(pageName: string) {
+export function setViewLocalStorage(pageName: string) {
   localStorage.setItem('view', pageName);
 }
 
-export async function setLocalStorage(page: string, pageName: string) {
+export function setCarIdLocalStorage(id: number) {
+  localStorage.setItem('carId', id.toString());
+}
+
+export async function setLocalStorage(view: string) {
+  let page = localStorage.getItem('carsPage');
+  if (!page) {
+    page = '1';
+  }
   setCarsPageLocalStorage(page);
   await setCarsInGarageLocalStorage(page);
-  setViewLocalStorage(pageName);
+  setViewLocalStorage(view);
 }
 
 export function getLocalStorage(name: string) {
