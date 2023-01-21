@@ -1,4 +1,6 @@
 import { getCars } from '../api/cars/getCars';
+import { IAnimationState } from '../api/interfaces';
+import { getWinners } from '../api/winners/getWinners';
 
 export function setCarsPageLocalStorage(page: string) {
   localStorage.setItem('carsPage', page);
@@ -15,6 +17,11 @@ export function setViewLocalStorage(pageName: string) {
 
 export function setCarIdLocalStorage(id: number) {
   localStorage.setItem('carId', id.toString());
+}
+
+export async function setWinnersLocalStorage(page: string) {
+  const res = await getWinners(+page);
+  localStorage.setItem('winners', JSON.stringify(res));
 }
 
 export async function setLocalStorage(view: string) {
@@ -34,3 +41,5 @@ export function getLocalStorage(name: string) {
     return data;
   }
 }
+
+export const requestIdState: IAnimationState = <IAnimationState>{};
