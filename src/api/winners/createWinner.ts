@@ -10,7 +10,7 @@ export async function createWinner(body: IWinnerData) {
         'Content-Type': 'application/json',
       },
     });
-    const item = await response.json();
+    const item: IWinnerData = await response.json();
     return item;
   } catch (err) {
     console.log(err);

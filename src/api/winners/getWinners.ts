@@ -1,5 +1,5 @@
 import { getCar } from '../cars/getCar';
-import { IWinnerData } from '../interfaces';
+import { IWinnerData, IWinnersData } from '../interfaces';
 import { path } from '../paths';
 
 function getSortOrder(sort?: string, order?: string) {
@@ -11,9 +11,8 @@ function getSortOrder(sort?: string, order?: string) {
 
 export async function getWinners(page: number, limit = 10, sort?: string, order?: string) {
   const response = await fetch(`${path.winners}?_page=${page}&_limit=${limit}${getSortOrder(sort, order)}`);
-  const items = await response.json();
-
-  return {
+  const items: IWinnerData[] = await response.json();
+  const result: IWinnersData = {
     items: await Promise.all(
       items.map(async (item: IWinnerData) => {
         return { ...item, car: await getCar(item.id) };
@@ -21,4 +20,5 @@ export async function getWinners(page: number, limit = 10, sort?: string, order?
     ),
     count: response.headers.get('X-Total-Count'),
   };
+  return result;
 }
