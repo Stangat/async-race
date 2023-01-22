@@ -27,8 +27,8 @@ export async function startDriving(id: number) {
     if (!success) {
       window.cancelAnimationFrame(requestIdState[id].requestId);
     }
-
-    return { success, id, time };
+    const drivingCar = { success, id, time };
+    return drivingCar;
   }
 }
 
