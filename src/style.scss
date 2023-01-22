@@ -43,7 +43,6 @@ body {
   display: flex;
   border-bottom: 3px solid white;
   justify-content: space-between;
-  // align-items: baseline;
 }
 
 .finish-flag {
@@ -116,6 +115,20 @@ body {
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:disabled:hover {
+    opacity: 1;
+    cursor: auto;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+  &:disabled:active {
+    transform: none;
+  }
 }
 
 .menu__button {
@@ -129,6 +142,16 @@ body {
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:disabled:hover {
+    opacity: 1;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
 }
 
 .engine-control {
@@ -141,9 +164,13 @@ body {
   border: 2px solid;
   border-radius: 5px;
   cursor: pointer;
+  transition: 0.2s;
   &:disabled {
-    color:rgb(85, 85, 85);
+    color: rgb(85, 85, 85);
     cursor: auto;
+  }
+  &:active {
+    transform: translateY(2px);
   }
 }
 .pagination-button {
@@ -158,8 +185,22 @@ body {
   font-weight: 500;
   cursor: pointer;
   &:disabled {
-    background:rgb(85, 85, 85);
+    background: rgb(85, 85, 85);
     cursor: auto;
+  }
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:disabled:hover {
+    opacity: 1;
+    cursor: auto;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+  &:disabled:active {
+    transform: none;
   }
 }
 
@@ -167,4 +208,64 @@ body {
   &:disabled {
     cursor: auto;
   }
+}
+
+.hidden {
+  display: none;
+}
+
+.result-message-container {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+}
+
+.result-message {
+  font-size: 4rem;
+  color: red;
+  @media (max-width: 720px) {
+    font-size: 2rem;
+  }
+}
+
+.table-car-image {
+  svg {
+    width: 45px;
+    height: 100%;
+  }
+}
+
+.table {
+  color: white;
+  margin-bottom: 100px;
+}
+
+.table td {
+  font-size: 1.4rem;
+  line-height: 0;
+}
+
+.table th {
+  padding: 5px;
+  background-color: rgb(159, 159, 233);
+}
+
+.table-button {
+  user-select: none;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.table-button.asc::after {
+  content: ' ↑';
+}
+
+.table-button.desc::after {
+  content: ' ↓';
 }
