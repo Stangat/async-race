@@ -1,4 +1,6 @@
-import { getLocalStorage, setCarsPageLocalStorage } from '../../../store/store';
+import { getLocalStorage, setCarsPageLocalStorage, setWinnersPageLocalStorage } from '../../../store/store';
+import { updateWinnersState } from '../../winners/winnersState';
+import { removeWinners, renderWinners } from '../../winners/winnersView';
 import { updateGarageState } from '../garageState';
 import { createGarage, removeGarage } from '../garageView';
 
@@ -15,6 +17,19 @@ export async function nextButtonListen() {
           await updateGarageState();
           removeGarage();
           createGarage();
+          break;
+        }
+        case 'winners': {
+          let winnersPage: number = getLocalStorage('winnersPage');
+          winnersPage += 1;
+          setWinnersPageLocalStorage(winnersPage.toString());
+          await updateWinnersState();
+          removeWinners();
+          renderWinners();
+          const winnersSection = document.querySelector('.winners-section');
+          if (winnersSection) {
+            winnersSection.classList.remove('hidden');
+          }
           break;
         }
       }
@@ -35,6 +50,19 @@ export async function prevButtonListen() {
           await updateGarageState();
           removeGarage();
           createGarage();
+          break;
+        }
+        case 'winners': {
+          let winnersPage: number = getLocalStorage('winnersPage');
+          winnersPage -= 1;
+          setWinnersPageLocalStorage(winnersPage.toString());
+          await updateWinnersState();
+          removeWinners();
+          renderWinners();
+          const winnersSection = document.querySelector('.winners-section');
+          if (winnersSection) {
+            winnersSection.classList.remove('hidden');
+          }
           break;
         }
       }
