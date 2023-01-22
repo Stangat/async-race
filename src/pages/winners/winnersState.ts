@@ -1,4 +1,4 @@
-import { getLocalStorage, setCarsInGarageLocalStorage, setWinnersLocalStorage } from '../../store/store';
+import { getLocalStorage, setWinnersLocalStorage } from '../../store/store';
 
 export async function updateWinnersState() {
   const winnersPage = getLocalStorage('winnersPage');

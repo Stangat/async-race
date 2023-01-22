@@ -1,5 +1,4 @@
 import { createCar } from '../../../api/cars/createCar';
-import { getCars } from '../../../api/cars/getCars';
 import { generateCars } from '../../../utils/generateCars';
 import { updateGarageState } from '../garageState';
 import { createGarage, removeGarage } from '../garageView';

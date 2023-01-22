@@ -1,4 +1,4 @@
-import { ICarDataGet, IWinnerData, IWinnersData } from '../../api/interfaces';
+import { ICarDataGet } from '../../api/interfaces';
 import { createCarImage } from '../car/carImage';
 import { getLocalStorage } from '../../store/store';
 
@@ -17,7 +17,9 @@ export function renderWinnersTable() {
         <th>Car</th>
         <th>Name</th>
         <th class="table-button table-button_wins ${sortType === 'wins' ? sortOrder : ''}" id="sort-by-wins">Wins</th>
-        <th class="table-button table-button_time ${sortType === 'time' ? sortOrder : ''}" id="sort-by-time">Best time (seconds)</th>
+        <th class="table-button table-button_time ${
+          sortType === 'time' ? sortOrder : ''
+        }" id="sort-by-time">Best time (seconds)</th>
       </thead>
       <tbody>
         ${winnersData

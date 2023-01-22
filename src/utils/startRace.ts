@@ -2,11 +2,21 @@ import { ICarDataGet } from '../api/interfaces';
 import { getLocalStorage } from '../store/store';
 
 type RaceWinner = { name: string; color: string; id: number; time: number };
+
 type DrivingCar = {
   success: boolean;
   id: number;
   time: number;
 };
+
+type CallbackFunction = (id: number) => Promise<
+  | {
+      success: boolean;
+      id: number;
+      time: number;
+    }
+  | undefined
+>;
 
 export async function getRaceWinner(promises: Promise<DrivingCar>[], idArray: number[]): Promise<RaceWinner> {
   const { success, id, time } = await Promise.race(promises);
@@ -24,9 +34,10 @@ export async function getRaceWinner(promises: Promise<DrivingCar>[], idArray: nu
   return carWinnerAndTimeObj;
 }
 
-export async function startRace(callback: Function) {
-  const carsInGarage: ICarDataGet[] = getLocalStorage('carsInGarage').items;
-  const promises: Promise<DrivingCar>[] = carsInGarage.map((item: ICarDataGet) => callback(item.id));
+export async function startRace(callback: CallbackFunction) {
+  const promises: Promise<DrivingCar>[] = getLocalStorage('carsInGarage').items.map((item: ICarDataGet) =>
+    callback(item.id)
+  );
 
   const raceWinner = await getRaceWinner(
     promises,
