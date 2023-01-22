@@ -3,8 +3,8 @@ export function renderResultMessage() {
   if (garageSection) {
     const resultMessageContainer = document.createElement('div');
     resultMessageContainer.className = 'result-message-container';
-    resultMessageContainer.innerHTML = ' <p class="result-message"></p>';
+    resultMessageContainer.innerHTML = ' <p class="result-message hidden"></p>';
 
-    garageSection.append(resultMessageContainer);
+    garageSection.after(resultMessageContainer);
   }
 }
