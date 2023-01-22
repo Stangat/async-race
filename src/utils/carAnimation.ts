@@ -1,9 +1,9 @@
+type animationState = {
+  requestId: number;
+};
+
 export function carAnimation(car: HTMLElement, distance: number, time: number) {
   let start: number;
-
-  type animationState = {
-    requestId: number;
-  };
   const requestIdState: animationState = <animationState>{};
 
   function step(timestamp: number) {
