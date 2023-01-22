@@ -34,6 +34,6 @@ export interface ICarDriveEngine {
   success: boolean;
 }
 
-export interface IAnimationState {
+export interface IStoreAnimationState {
   [carId: number]: { requestId: number };
 }
