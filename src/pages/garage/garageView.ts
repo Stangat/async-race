@@ -5,7 +5,7 @@ import { ICarDataGet } from '../../api/interfaces';
 function createGarageControlBlock() {
   const garageControlBlockHtml = `
     <div class="menu">
-      <button class="menu__button menu__button_garage">To garage</button>
+      <button class="menu__button menu__button_garage" disabled>To garage</button>
       <button class="menu__button menu__button_winners">To winners</button>
     </div>
     <div class="garage-view">
@@ -22,7 +22,7 @@ function createGarageControlBlock() {
         </form>
         <div class="race-controls">
           <button class="button race-controls__start-button">Race</button>
-          <button class="button race-controls__reset-button">Reset</button>
+          <button class="button race-controls__reset-button" disabled>Reset</button>
           <button class="button generate-button">Generate cars</button>
         </div>
       </div>
