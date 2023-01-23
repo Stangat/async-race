@@ -3,8 +3,8 @@ import { updateWinnersState } from '../winnersState';
 import { removeWinners, renderWinners } from '../winnersView';
 
 export async function tableWinsButtonListen() {
-  if (event) {
-    const eventTarget = event.target;
+  if (window.event) {
+    const eventTarget = window.event.target;
     if (eventTarget instanceof HTMLElement) {
       if (eventTarget.classList.contains('table-button_wins')) {
         sortWinnersBy('wins');
@@ -21,8 +21,8 @@ export async function tableWinsButtonListen() {
 }
 
 export async function tableTimeButtonListen() {
-  if (event) {
-    const eventTarget = event.target;
+  if (window.event) {
+    const eventTarget = window.event.target;
     if (eventTarget instanceof HTMLElement) {
       if (eventTarget.classList.contains('table-button_time')) {
         sortWinnersBy('time');

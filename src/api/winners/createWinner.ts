@@ -15,4 +15,5 @@ export async function createWinner(body: IWinnerData) {
   } catch (err) {
     console.log(err);
   }
+  return undefined;
 }

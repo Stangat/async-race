@@ -1,6 +1,7 @@
 import { getCar } from '../../../api/cars/getCar';
 import { setCarIdLocalStorage } from '../../../store/store';
 import { getCarId } from '../../../utils/getCarId';
+
 let selectedCar = null;
 
 export async function selectButtonListen() {
@@ -8,8 +9,8 @@ export async function selectButtonListen() {
   const updateInputColor: HTMLInputElement | null = document.querySelector('.input-color__update');
   const updateSubmitButton: HTMLButtonElement | null = document.querySelector('.form__submit-button_update');
 
-  if (event && updateInputText && updateInputColor && updateSubmitButton) {
-    const eventTarget = event.target;
+  if (window.event && updateInputText && updateInputColor && updateSubmitButton) {
+    const eventTarget = window.event.target;
     if (eventTarget instanceof HTMLButtonElement) {
       if (eventTarget.classList.contains('select-button')) {
         const id: number = getCarId('select-car-');

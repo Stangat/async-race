@@ -9,7 +9,7 @@ export async function generateCarsButtonListen() {
     generateCarsButton.addEventListener('click', async () => {
       generateCarsButton.disabled = true;
       const cars = generateCars();
-      cars.forEach(async (car) => await createCar(car));
+      cars.forEach(async (car) => createCar(car));
       await updateGarageState();
       removeGarage();
       createGarage();

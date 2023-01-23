@@ -5,7 +5,7 @@ export async function updateGarageState() {
   await setCarsInGarageLocalStorage(carsPage);
   const CARS_PER_PAGE = 7;
   const FIRST_PAGE = 1;
-  const count: number = getLocalStorage('carsInGarage').count;
+  const { count } = getLocalStorage('carsInGarage');
   const nextButton: HTMLButtonElement | null = document.querySelector('.pagination-button_next');
   const prevButton: HTMLButtonElement | null = document.querySelector('.pagination-button_prev');
 

@@ -11,7 +11,7 @@ export async function resetButtonListen() {
     resetButton.addEventListener('click', async () => {
       resetButton.disabled = true;
       const carsInGarage: ICarDataGet[] = getLocalStorage('carsInGarage').items;
-      carsInGarage.map(async (item) => await stopDriving(item.id));
+      carsInGarage.map(async (item) => stopDriving(item.id));
       resultMessage.classList.toggle('hidden', true);
       raceButton.disabled = false;
       await updateGarageState();

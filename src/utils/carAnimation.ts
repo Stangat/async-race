@@ -1,10 +1,11 @@
-type animationState = {
+type AnimationState = {
   requestId: number;
 };
 
 export function carAnimation(car: HTMLElement, distance: number, time: number) {
   let start: number;
-  const requestIdState: animationState = <animationState>{};
+  const requestIdState: AnimationState = <AnimationState>{};
+  const automobile = car;
 
   function step(timestamp: number) {
     if (start === undefined) {
@@ -15,7 +16,7 @@ export function carAnimation(car: HTMLElement, distance: number, time: number) {
     const distancePassed = Math.round(elapsed * speed);
 
     const count = Math.min(distancePassed, distance);
-    car.style.transform = `translateX(${count}px)`;
+    automobile.style.transform = `translateX(${count}px)`;
 
     if (distancePassed < distance) {
       requestIdState.requestId = window.requestAnimationFrame(step);

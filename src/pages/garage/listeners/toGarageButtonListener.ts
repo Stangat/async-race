@@ -18,9 +18,7 @@ export async function toGarageButtonListen() {
         garageSection.classList.toggle('hidden', false);
       }
       localStorage.setItem('view', 'garage');
-      if (raceButton.disabled === false) {
-        updateGarageState();
-      }
+      updateGarageState();
     });
   }
 }

@@ -26,9 +26,10 @@ const carModels = [
 ];
 
 function getRandomCarName() {
-  const randomNumber = Math.floor(Math.random() * carBrands.length);
-  const randomCarBrand = carBrands[randomNumber];
-  const randomCarModel = carModels[randomNumber];
+  const randomNumberForCarBrands = Math.floor(Math.random() * carBrands.length);
+  const randomCarBrand = carBrands[randomNumberForCarBrands];
+  const randomNumberForCarModels = Math.floor(Math.random() * carModels.length);
+  const randomCarModel = carModels[randomNumberForCarModels];
   const randomCarName = `${randomCarBrand} ${randomCarModel}`;
   return randomCarName;
 }

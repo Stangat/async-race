@@ -52,6 +52,7 @@ export function getLocalStorage(name: string) {
     const data = JSON.parse(result);
     return data;
   }
+  return undefined;
 }
 
 export const requestIdState: IStoreAnimationState = <IStoreAnimationState>{};

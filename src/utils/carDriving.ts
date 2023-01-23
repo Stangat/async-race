@@ -30,6 +30,7 @@ export async function startDriving(id: number) {
     const drivingCar = { success, id, time };
     return drivingCar;
   }
+  return undefined;
 }
 
 export async function stopDriving(id: number) {

@@ -8,7 +8,7 @@ export async function updateWinnersState() {
     await setWinnersLocalStorage(winnersPage, sortType, sortOrder);
     const WINNERS_PER_PAGE = 10;
     const FIRST_PAGE = 1;
-    const count: number = getLocalStorage('winners').count;
+    const { count } = getLocalStorage('winners');
     const nextButton: HTMLButtonElement | null = document.querySelector('.pagination-button_next');
     const prevButton: HTMLButtonElement | null = document.querySelector('.pagination-button_prev');
 
