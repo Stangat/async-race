@@ -23,7 +23,7 @@ export async function getRaceWinner(promises: Promise<DrivingCar>[], idArray: nu
 
   if (!success) {
     const looserCarIndex = idArray.findIndex((i) => i === id);
-    const removedCar = [...promises.splice(looserCarIndex, 1)];
+    promises.splice(looserCarIndex, 1);
     const remainedIds = [...idArray.slice(0, looserCarIndex), ...idArray.slice(looserCarIndex + 1, idArray.length)];
     return getRaceWinner(promises, remainedIds);
   }
