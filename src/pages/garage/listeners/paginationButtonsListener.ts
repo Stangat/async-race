@@ -14,6 +14,12 @@ export async function nextButtonListen() {
           let carsPage: number = getLocalStorage('carsPage');
           carsPage += 1;
           setCarsPageLocalStorage(carsPage.toString());
+          const resetButton: HTMLButtonElement | null = document.querySelector('.race-controls__reset-button');
+          const raceButton: HTMLButtonElement | null = document.querySelector('.race-controls__start-button');
+          if (resetButton && raceButton) {
+            resetButton.disabled = true;
+            raceButton.disabled = false;
+          }
           await updateGarageState();
           removeGarage();
           createGarage();
@@ -32,6 +38,8 @@ export async function nextButtonListen() {
           }
           break;
         }
+        default:
+        // do nothing
       }
     });
   }
@@ -47,6 +55,12 @@ export async function prevButtonListen() {
           let carsPage: number = getLocalStorage('carsPage');
           carsPage -= 1;
           setCarsPageLocalStorage(carsPage.toString());
+          const resetButton: HTMLButtonElement | null = document.querySelector('.race-controls__reset-button');
+          const raceButton: HTMLButtonElement | null = document.querySelector('.race-controls__start-button');
+          if (resetButton && raceButton) {
+            resetButton.disabled = true;
+            raceButton.disabled = false;
+          }
           await updateGarageState();
           removeGarage();
           createGarage();
@@ -65,6 +79,8 @@ export async function prevButtonListen() {
           }
           break;
         }
+        default:
+        // do nothing
       }
     });
   }
