@@ -3,6 +3,8 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["prettier", "import", "@typescript-eslint"],
   "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
     "eslint:recommended",
     "plugin:prettier/recommended",
     "prettier",
@@ -10,7 +12,8 @@
   ],
   "parserOptions": {
     "ecmaVersion": 2020,
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
   "env": {
     "es6": true,
@@ -18,6 +21,7 @@
     "node": true
   },
   "rules": {
+    "import/prefer-default-export": "off",
     "no-debugger": "off",
     "no-console": 0,
     "class-methods-use-this": "off",
